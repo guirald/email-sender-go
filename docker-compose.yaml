@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    environment:
+      - MAIL_HOST=
+      - MAIL_PORT=587
+      - MAIL_USER=
+      - MAIL_PASSWORD=
+      - MAIL_FROM=
+      - BOOTSTRAP_SERVERS=
+      - SECURITY_PROTOCOL=SASL_SSL
+      - SASL_MECHANISMS=PLAIN
+      - SASL_USERNAME=
+      - SASL_PASSWORD=
+    volumes:
+      - .:/go/src
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
